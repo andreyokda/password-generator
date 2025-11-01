@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор случайных паролей</title>
+    <link rel="stylesheet" href="./style/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Генератор паролей</h1>
+            <p>Создавайте надежные пароли за секунды</p>
+        </header>
+
+        <main class="main">
+            <div class="password-display">
+                <input type="text" id="passwordOutput" readonly placeholder="Нажмите Сгенерировать для создания пароля">
+                <div class="password-actions">
+                    <button id="copyBtn" class="btn-action" title="Скопировать">
+                        Скопировать
+                    </button>
+                    <button id="generateBtn" class="btn-action" title="Сгенерировать">
+                        Сгенерировать
+                    </button>
+                </div>
+            </div>
+
+            <div class="password-strength">
+                <div class="strength-meter">
+                    <div class="strength-bar"></div>
+                </div>
+                <span id="strengthText">Надежность: -</span>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="lengthSlider">Длина пароля: <span id="lengthValue">12</span></label>
+                    <input type="range" id="lengthSlider" min="4" max="32" value="12">
+                </div>
+
+                <div class="checkboxes">
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="uppercase" checked>
+                            Заглавные буквы (A-Z)
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="lowercase" checked>
+                            Строчные буквы (a-z)
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="numbers" checked>
+                            Цифры (0-9)
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="symbols">
+                            Спецсимволы (!@#$%^&*)
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="excludeSimilar">
+                            Исключать похожие символы (i,l,1,L,o,0,O)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="saveBtn" class="btn-save">Сохранить настройки</button>
+            </div>
+
+            <div class="history" id="passwordHistory">
+                <h3>История паролей</h3>
+                <div class="history-list" id="historyList">
+                    <p class="empty-history">История пуста</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="notification" id="notification">Пароль скопирован!</div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
